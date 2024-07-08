@@ -21,7 +21,7 @@ else:
 data = data.groupby(selected_option).sum()["Sales"].reset_index()
 
 # Create bar chart
-fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['red'],hover_data={'Sales':':$,.2f'})
+fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['red'],hover_data={'Sales':':$,.2f'},width=5, heigh= 6)
 config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
 
@@ -42,6 +42,6 @@ else:
 data1 = data.groupby(selected_option1).sum()["Sales"].reset_index()
 
 # Create bar chart
-fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'})
+fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'},width=5, heigh= 6)
 config = {'displayModeBar': False}
 st.plotly_chart(fig1, config=config)
