@@ -42,6 +42,6 @@ else:
 data1 = data.groupby(selected_option1).sum()["Sales"].reset_index()
 
 # Create bar chart
-fig1 = px.bar(data1, group_col1, "Sales",color_discrete_sequence =['green'])
+fig1 = px.barh(data1, group_col1, "Sales",color_discrete_sequence =['green'])
 config = {'displayModeBar': False}
 st.plotly_chart(fig1, config=config)
