@@ -26,21 +26,5 @@ config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
 
 #Second plot
-options2 = ["Ship Mode","Sub-Category"]
-selected_option2 = st.selectbox("", options2)
-
-
-# Data aggregation based on user selection
-if selected_option2 == "Ship Mode":
-    group_col2 = "Ship Mode"
-else: 
-    group_col2 = "Sub-Category"
-
-#Group the data by Selected_option
-data = data.groupby(selected_option2).sum()["Sales"].reset_index()
-
-# Create bar chart
-fig = px.bar(data, group_col2, "Sales",color_discrete_sequence =['green'])
-config = {'displayModeBar': False}
-st.plotly_chart(fig, config=config)
-
+options1 = ["Ship Mode","Sub-Category"]
+selected_option1 = st.selectbox("", options1)
