@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-st.title("My Dashboard")
+st.title("Sales Dashboard")
 
 options = ["Region","Segment"]
 selected_option = st.selectbox("", options)
