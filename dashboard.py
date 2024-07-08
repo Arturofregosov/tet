@@ -29,6 +29,9 @@ st.plotly_chart(fig, config=config)
 options1 = ["Ship Mode","Sub-Category"]
 selected_option1 = st.selectbox("", options1)
 
+#Read the Data
+data = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding='latin-1')
+
 # Data aggregation based on user selection
 if selected_option1 == "Ship Mode":
     group_col1 = "Ship Mode"
