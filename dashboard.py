@@ -26,3 +26,10 @@ data = data.groupby(selected_option).sum()["Sales"].reset_index()
 fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'}).update_xaxes(tickfont_family="Arial Black")
 config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
+
+#Treemap Code
+#Read the Data
+df = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding='latin-1')
+
+#Treemap
+st.plotly_chart(px.treemap(df,path = ["Product Name"], values = "Sales",color = "Product Name",title="Sales by Product"), config = config)
