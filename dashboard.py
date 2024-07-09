@@ -25,7 +25,7 @@ fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['red'],hover_dat
 config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
 
-#Second plot
+#Second plot code
 options1 = ["Ship Mode","Sub-Category"]
 selected_option1 = st.selectbox("", options1)
 
@@ -41,7 +41,7 @@ else:
 #Group the data by Selected_option1
 data1 = data.groupby(selected_option1).sum()["Sales"].reset_index()
 
-# Create bar chart
+# Create second bar chart
 fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'})
 config = {'displayModeBar': False}
 st.plotly_chart(fig1, config=config)
