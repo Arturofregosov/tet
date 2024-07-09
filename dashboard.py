@@ -14,7 +14,7 @@ data = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encodi
 # Data aggregation based on user selection
 if selected_option == "Segment":
     group_col = "Segment"
-elseif selected_option == "Region":
+elif selected_option == "Region":
     group_col = "Region"
 else: 
     group_col = "Sub-Category"
