@@ -21,27 +21,6 @@ else:
 data = data.groupby(selected_option).sum()["Sales"].reset_index()
 
 # Create bar chart
-fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['red'],hover_data={'Sales':':$,.2f'}).update_xaxes(tickfont_family="Arial Black")
+fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'}).update_xaxes(tickfont_family="Arial Black")
 config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
-
-#Second plot code
-options1 = ["Ship Mode","Sub-Category"]
-selected_option1 = st.selectbox("", options1)
-
-#Read the Data
-data = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding='latin-1')
-
-# Data aggregation based on user selection
-if selected_option1 == "Ship Mode":
-    group_col1 = "Ship Mode"
-else: 
-    group_col1 = "Sub-Category"
-
-#Group the data by Selected_option1
-data1 = data.groupby(selected_option1).sum()["Sales"].reset_index()
-
-# Create second bar chart
-fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'}).update_yaxes(tickfont_family="Arial Black")
-config = {'displayModeBar': False}
-st.plotly_chart(fig1, config=config)
