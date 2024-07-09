@@ -42,6 +42,6 @@ else:
 data1 = data.groupby(selected_option1).sum()["Sales"].reset_index()
 
 # Create second bar chart
-fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'})
+fig1 = px.bar(data1,"Sales",group_col1,color_discrete_sequence =['green'],hover_data={'Sales':':$,.2f'}).update_yaxes(tickfont_family="Arial Black")
 config = {'displayModeBar': False}
 st.plotly_chart(fig1, config=config)
