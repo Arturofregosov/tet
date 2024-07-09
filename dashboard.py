@@ -5,7 +5,7 @@ import plotly.express as px
 
 st.title("My Dashboard")
 
-options = ["Region","Segment","Sub-Category"]
+options = ["Segment","Region","Sub-Category"]
 selected_option = st.selectbox("", options)
 
 #Read the Data
