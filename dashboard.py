@@ -33,3 +33,9 @@ df = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding
 
 #Treemap
 st.plotly_chart(px.treemap(df,path = ["Product Name"], values = "Sales",color = "Product Name",title="Sales by Product"), config = config)
+
+#Sales by Order Date
+df = pd.read_csv("sales_data.csv",encoding="latin-1")
+df["Order Date"] = pd.to_datetime(df["Order Date"], format='%m/%d/%y',errors='coerce')
+df = df.groupby("Order Date").sum()["Sales"].reset_index()
+st.plotly_chart(px.line(df,"Order Date","Sales",template="simple_white", title="Sales by Order Date"), config=config)
