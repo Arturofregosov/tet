@@ -32,7 +32,7 @@ st.plotly_chart(fig, config=config)
 df = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding='latin-1')
 
 #plot
-st.plotly_chart(px.treemap(df,path = ["Product Name"], values = "Sales",color = "Product Name",title="Sales by Product"), config = config)
+st.plotly_chart(px.treemap(df,path = ["Product Name","Sales"], values = "Sales",color = "Product Name",title="Sales by Product"), config = config)
 
 #Sales by Order Date
 df = pd.read_csv("sales_data.csv",encoding="latin-1")
