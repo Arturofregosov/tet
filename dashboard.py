@@ -27,12 +27,12 @@ fig = px.bar(data, group_col, "Sales",color_discrete_sequence =['green']).update
 config = {'displayModeBar': False}
 st.plotly_chart(fig, config=config)
 
-#Treemap Code
+#Treemap 
 #Read the Data
 df = pd.read_csv("sales_data.csv", low_memory=False, na_filter = False, encoding='latin-1')
 
-#Treemap
-st.plotly_chart(px.treemap(df,path = ["Product Name"], values = "Sales",color = "Product Name",title="Sales by Product"), config = config)
+#plot
+st.plotly_chart(px.treemap(df,path = ["Product Name"], values = "Sales",color = "Product Name",title="Sales by Product",text="Sales"), config = config)
 
 #Sales by Order Date
 df = pd.read_csv("sales_data.csv",encoding="latin-1")
