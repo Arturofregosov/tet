@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
-
 st.title("Sales Dashboard")
-
+total_sales = int(df["Sales"].sum())
+st.subheader(total_sales)
 options = ["Segment","Region","Sub-Category"]
 selected_option = st.selectbox("", options)
 
